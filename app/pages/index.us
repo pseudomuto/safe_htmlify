@@ -2,9 +2,47 @@
 <html>
   <head>
     <title><%= pkg.name %></title>
+    <style>
+    button { margin: 20px 0; display: block; font-size: 2em }
+    </style>
   </head>
   <body>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/safe_htmlify.min.js"></script>
+    <h1><%= pkg.name %> Example</h1>
+    <h2>Input:</h2>
+    <textarea id="input" rows="10" cols="120"></textarea>
+
+    <h2>Options</h2>
+    <input type="radio" name="options" value="0" checked> Default (remove all)
+    <input type="radio" name="options" value="1"> Only paragraphs
+    <input type="radio" name="options" value="2"> Only paragraphs (with class attr)
+    <input type="radio" name="options" value="3"> Paragraphs and strong tags (with class and style attrs)
+
+    <button>Make Safe!</button>
+
+    <h2>Output</h2>
+    <div id="output"></div>
+    <textarea id="output-raw" rows="10" cols="120" readonly></textarea>
+
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/safe_htmlify.js"></script>
+    <script>
+      var options = [
+        null,
+        { tags: { p: [] } },
+        { tags: { p: ['class'] } },
+        { tags: { p: [], strong: [] }, globalAttributes: ['class', 'style'] }
+      ];
+
+      $(function() {
+        $('button').click(function(e) {
+          var index = parseInt($('input:checked').val());
+          var input = $('#input').val();
+
+          var result = $.safeHtmlify(input, options[index]);
+          $('#output').html(result);
+          $('#output-raw').text(result);
+        });
+      });
+    </script>
   </body>
 </html>

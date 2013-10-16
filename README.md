@@ -51,6 +51,12 @@ You can globally allow attributes (on any whitelisted tag) by supplying an optio
 
 Same as always...fork it, change it, push it, pull it.
 
+### Running Samples
+
+    lineman run
+
+Then open `http://localhost:8000`
+
 ### Running the tests
 
 For this you'll want to have two terminals available

@@ -19,6 +19,6 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
   },
   js: {
     concatenated: 'generated/js/safe_htmlify.js',
-    minified: 'dist/js/safe_htmlify.min.js'
+    minified: 'dist/js/safe_htmlify.js'
   }
 });
