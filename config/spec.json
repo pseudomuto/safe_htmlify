@@ -1,0 +1,10 @@
+{
+  "framework" : "jasmine",
+  "launch_in_dev" : ["Chrome"],
+  "launch_in_ci" : ["PhantomJS"],
+  "src_files" : [
+    "http://code.jquery.com/jquery-1.10.2.min.js",
+    "generated/js/app.js",
+    "generated/js/spec.js"
+  ]
+}
