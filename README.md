@@ -1,5 +1,7 @@
 # SafeHtmlify
 
+[![Build Status](https://travis-ci.org/pseudomuto/safe_htmlify.png)](https://travis-ci.org/pseudomuto/safe_htmlify)
+
 A jQuery plugin that strips HTML from strings except in cases where you say otherwise!
 
 The main purpose is to be able to show user-generated HTML on a web page without having to worry about scripts/styles breaking your whole site. This is accomplished by:

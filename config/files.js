@@ -14,4 +14,11 @@
 
 module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
   //Override file patterns here
+  coffee: {
+    generated: 'generated/js/safe_htmlify.coffee.js'
+  },
+  js: {
+    concatenated: 'generated/js/safe_htmlify.js',
+    minified: 'dist/js/safe_htmlify.min.js'
+  }
 });

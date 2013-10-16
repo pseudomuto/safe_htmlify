@@ -31,5 +31,4 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   // following line:
   //
   // enableSass: false
-
 });

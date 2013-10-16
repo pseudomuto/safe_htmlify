@@ -5,6 +5,6 @@
   </head>
   <body>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/safe_htmlify.min.js"></script>
   </body>
 </html>

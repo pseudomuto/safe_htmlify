@@ -14,6 +14,8 @@ describe "HtmlifyParser", ->
       it "uses default options when none are supplied", ->
         parser = new HtmlifyParser(undefined)
         expect(parser.options).not.toBe null
+        expect(parser.options.tags).toEqual {}
+        expect(parser.options.globalAttributes).toEqual []
 
   describe "#parse", ->
 
@@ -21,6 +23,12 @@ describe "HtmlifyParser", ->
 
     it "returns an empty string when no html is given", ->
       expect(parser.parse(undefined)).toBe ''
+
+    context "when using the default options", ->
+
+      it "removes all html", ->
+        html = '<p><strong>Some message</strong></p>'
+        expect(new HtmlifyParser().parse(html)).toBe 'Some message'
 
     context "when given tags without attributes", ->
 

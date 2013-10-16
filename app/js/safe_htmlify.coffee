@@ -8,7 +8,7 @@ DEFAULT_OPTIONS =
 
 class HtmlifyParser
   constructor: (options) ->
-    @options = options || DEFAULT_OPTIONS
+    @options = $.extend {}, DEFAULT_OPTIONS, options || {}
 
     attrs = @options.globalAttributes
     for tag of @options.tags
