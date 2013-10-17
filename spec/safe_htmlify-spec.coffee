@@ -67,3 +67,13 @@ describe "HtmlifyParser", ->
       it "remove script tag content", ->
         html = '<script>document.write("some content");</script>'
         expect(parser.parse(html)).toBe ''
+
+    context "when dealing with self closing tags", ->
+
+      it "can handle HTML5 tags", ->
+        html = 'This is <img src="some-image.png" alt=""> some image'
+        expect(parser.parse(html)).toBe 'This is  some image'
+
+      it "can handle self closing tags", ->
+        html = 'This is on<br/>two lines'
+        expect(parser.parse(html)).toBe 'This is ontwo lines'

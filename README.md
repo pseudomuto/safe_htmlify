@@ -4,10 +4,21 @@
 
 A jQuery plugin that strips HTML from strings except in cases where you say otherwise!
 
-The main purpose is to be able to show user-generated HTML on a web page without having to worry about scripts/styles breaking your whole site. This is accomplished by:
+The main purpose is to be able to show user-generated HTML on a web page without having to worry about scripts/styles breaking your whole site.
 
-* only allowing specifically whitelisted tags and attributes
-* not allowing script tags (even if you try to whitelist `script`)
+Things to note:
+
+* only allows specifically whitelisted tags and attributes, no other markup
+* script tags are never allowed (even if you try to whitelist `script`)
+
+## Installation
+
+* Clone this repo and cd to the working directory
+* Run `npm install` to download packages
+* Run `lineman build` to build the script
+* Copy `dist/js/safe_htmlify.js` to your project
+
+*I intend to make this simpler in the future...*
 
 ## Usage
 
